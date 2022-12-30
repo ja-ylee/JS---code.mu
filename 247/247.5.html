@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">1</p>
+    <input type="submit" id="b" value="+1">
+
+    <script>
+        "use strict";
+        let p = document.querySelector('#p');
+        let b = document.querySelector('#b');
+        b.addEventListener('click', function() {
+            p.textContent = Number(p.textContent)+ 1;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text1">1</p>
+    <p id="text2">20</p>
+    <input type="submit" id="button" value="сумма">
+
+    <script>
+        "use strict";
+        let p1 = document.querySelector('#text1');
+        let p2 = document.querySelector('#text2');
+        let b = document.querySelector('#button');
+
+        b.addEventListener('click',function() {
+            alert(Number(p1.textContent) + Number(p2.textContent));
+        })
+    </script>
+</body>
+</html>
