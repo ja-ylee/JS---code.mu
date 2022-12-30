@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      "use strict";
+      let obj1 = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+        e: 5,
+      };
+      let obj2 = {};
+      let key = [];
+      let elem = [];
+      for (let keys in obj1) {
+        key.push(keys);
+        elem.push(obj1[keys]);
+      }
+      for (let i = 0; i <= 4; i++) {
+        obj2[elem[i]] = key[i];
+      }
+      console.log(obj2);
+    </script>
+  </head>
+  <body></body>
+</html>
