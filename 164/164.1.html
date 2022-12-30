@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+    function func(num) {
+	let sum = 0;
+	
+	for (let i = 1; i <= num; i++) {
+		sum += i;
+	}
+    return sum;
+} 
+/* Автор хотел написать функцию вывода суммы чисел с 1 по введенное число пользователем, но иттерация будет всего 1, т.к. возврат суммы встроен в сам цикл, а должен быть снаружи,
+чтобы сумма была сформированной */
+console.log( func(5) );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

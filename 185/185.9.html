@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        function test(num, func1, func2) {
+            return func1(num) + func2(num);
+        }
+
+        console.log(test(3,
+            function(num){
+                return num ** 2;
+            },
+            function(num){
+                return num ** 3;
+            },
+        ));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

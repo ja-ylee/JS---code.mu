@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        function mkNumWord(num) {
+            let obj = {
+                1: 'один',  2: 'два',   3: 'три',   4: 'четыре',    5: 'пять',
+                6: 'шесть',  7: 'семь',   8: 'восемь',   9: 'девять',    10: 'десять',
+                11: 'одиннадцать',  12: 'двенадцать',   13: 'тринадцать',   14: 'четырнадцать',    15: 'пятнадцать',
+                16: 'одиннадцать',  17: 'семнадцать',   18: 'восемдцать',   19: 'девятнадцать',    20: 'двадцать',
+                30: 'тридцать',  40: 'сорок',   50: 'пятьдесят',   60: 'шестьдесят',    70: 'семьдесят',
+                80: 'восемьдесят',  90: 'девяносто',   100: 'сто',   200: 'двести',    300: 'триста',
+                400: 'четыреста',  500: 'пятьсот',   600: 'шестьсот',   700: 'семьсот',    800: 'восемьсот',
+                900: 'девятьсот',
+            }
+            let num1 = num % 10;
+            let num10 = (num % 100) - (num % 10);
+            let num100 = num - (num % 100);
+            let str = '';
+            for (let key in obj) {
+                if (key == num) {
+                    str += obj[key];
+                    return str;
+                }
+            }
+            if (String(num).length === 3) {
+                str += obj[num100] + " " + obj[num10] + " " + obj[num1];
+            }
+            if (String(num).length === 2) {
+                str += obj[num10] + " " + obj[num1];
+            }
+            if (String(num).length === 1){
+                str += obj[num1];
+            }
+            return str;
+        }
+        console.log(mkNumWord(123));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

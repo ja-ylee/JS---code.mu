@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        let obj = {
+            func1: function(arr) {
+                let sum = 0;
+                for (let elem of arr){
+                    sum += elem;
+                };
+                return sum;
+            },
+            func2: function(arr) {
+                let sum = 0;
+                for (let elem of arr){
+                    sum += elem ** 2;
+                };
+                return sum;
+            },
+            func3: function(arr) {
+                let sum = 0;
+                for (let elem of arr) {
+                    sum += elem ** 3;
+                };
+                return sum;
+            },
+        };
+        let arr = [1, 2, 3, 4, 5];
+        
+        console.log(obj.func1(arr));
+        console.log(obj.func2(arr));
+        console.log(obj.func3(arr));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

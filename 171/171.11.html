@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        function getDev(num) { //функция находящая делители числа и записывающая их в строку
+            let res = '';
+            for (let i = 1; i < num; i++) {
+                if ( num % i == 0){
+                    res += i + " ";
+                }
+            }
+            return res;
+        }
+        
+        function mkArr(num) { //фукнция создающая массив из делителей числа
+            let arr = getDev(num).split(' ');
+            arr.pop();
+            return arr;
+        }
+        
+        function checkNumbers(num1,num2) { //функция проверающая числа на дружественность
+            let delNum1 = mkArr(num1);
+            let delNum2 = mkArr(num2);
+            let sum1 = 0;
+            let sum2 = 0;
+            for (let elem of delNum1) {
+                sum1 += +elem;
+            }
+            for (let elem of delNum2) {
+                sum2 += +elem;
+            }
+            return sum1 == num2 && sum2 == num1;
+        }
+
+        function checkTo1000(arr) { //функция ищущая дружественная числа из промежутка от 1 до 1000
+            for (let i = 2; i <= 1000; i++){
+                for (let j =2; j <= 1000; j++){
+                    if (i !== j) {
+                        if (checkNumbers(i,j) === true) {
+                            arr.push(j);
+                        }
+                    }
+                } 
+            }
+            return arr;
+        }
+        console.log(checkTo1000([]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

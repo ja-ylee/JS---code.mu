@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        function getDev(num) { //функция находящая делители числа и записывающая их в строку
+            let res = '';
+            for (let i = 1; i < num; i++) {
+                if ( num % i == 0){
+                    res += i + " ";
+                }
+            }
+            return res;
+        }
+
+        function mkArr(num) { //фукнция создающая массив из делителей числа
+            let arr = getDev(num).split(' ');
+            arr.pop();
+            return arr;
+        }
+
+        function checkNumbers(num1) { //функция проверающая числа на дружественность
+            let delNum1 = mkArr(num1);
+            let sum1 = 0;
+            for (let elem of delNum1) {
+                sum1 += +elem;
+            }
+            return sum1 == num1;
+        }
+        console.log(checkNumbers(29));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        function getDev(num) { //функция находящая делители числа и записывающая их в строку
+            let res = '';
+            for (let i = 1; i < num; i++) {
+                if ( num % i == 0){
+                    res += i + " ";
+                }
+            }
+            return res;
+        }
+
+        function mkArr(num) { //фукнция создающая массив из делителей числа
+            let arr = getDev(num).split(' ');
+            arr.pop();
+            return arr;
+        }
+
+        function GetUnDev(num1,num2) { //функция проверяет на общие делители и деллает из них массив
+            let delNum1 = mkArr(num1);
+            let delNum2 = mkArr(num2);
+            let arr = [];
+            for (let elem1 of delNum1) {
+                for (let elem2 of delNum2) {
+                    if (elem1 == elem2) {
+                        arr.push(elem1);
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(GetUnDev(6,9));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
