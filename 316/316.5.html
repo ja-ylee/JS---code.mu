@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>клик</button>
+    <p></p>
+    <script>
+        "use strict";
+        let btn = document.querySelector('button');
+        let inp = document.querySelector('input');
+        let p = document.querySelector('p');
+        btn.addEventListener('click', function func() {
+            let num = Number(inp.value);
+            p.textContent = num;
+            let id = setInterval(function() {
+                if (p.textContent == 0) {
+                    clearInterval(id);
+                }   else {
+                    p.textContent -= 1;
+                }
+            }, 1000);
+            this.removeEventListener('click', func);
+        });
+    </script>
+</body>
+</html>

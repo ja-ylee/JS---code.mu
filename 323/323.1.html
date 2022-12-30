@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <script>
+        "use strict";
+        let ul = document.querySelector('#elem');
+        let li1 = document.createElement('li');
+        li1.textContent = 'start';
+        ul.prepend(li1);
+        let li2 = document.createElement('li');
+        li2.textContent = 'finish';
+        ul.append(li2);
+    </script>
+</body>
+</html>

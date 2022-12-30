@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <p></p>
+    <script>
+        "use strict";
+        let inp = document.querySelector('input');
+        let p = document.querySelector('p');
+        inp.addEventListener('blur', function func() {
+            let num = Number(inp.value);
+            let id = setInterval(function() {
+                if(num === 0) {
+                    clearInterval(id);
+                }   else {
+                    p.textContent = --num;
+                }
+            }, 1000);
+            this.removeEventListener('blur', func);
+        });
+    </script>
+</body>
+</html>

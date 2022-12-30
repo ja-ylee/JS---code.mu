@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>клик!</button>
+    <p>10</p>
+    <script>
+        "use strict";
+        let btn = document.querySelector('button');
+        let res = document.querySelector('p');
+        btn.addEventListener('click', function func() {
+            setInterval(function() {
+                res.textContent = Number(res.textContent) + 1;
+            }, 1000);
+            this.removeEventListener('click', func);
+        });
+    </script>
+</body>
+</html>

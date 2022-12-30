@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = 'start'>начать</button>
+    <button id = 'stop'>стоп</button>
+    <script>
+        "use strict";
+        let start = document.querySelector('#start');
+        let stop = document.querySelector('#stop');
+        let i = 100;
+        let id;
+        start.addEventListener('click', function() {
+            id = setInterval(function() {
+                if (i === 0) {
+                    clearInterval(id);
+                }
+                console.log(i--);
+            },1000);
+        });
+        stop.addEventListener('click', function() {
+            clearInterval(id);
+        });
+    </script>
+</body>
+</html>
