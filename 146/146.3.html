@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        let data = [
+	{
+		1: [
+			'data111',
+			'data112',
+			'data113',
+		],
+		2: [
+			'data121',
+			'data122',
+			'data123',
+		],
+	},
+	{
+		1: [
+			'data211',
+			'data212',
+			'data213',
+		],
+		2: [
+			'data221',
+			'data222',
+			'data223',
+		],
+	},
+	{
+		1: [
+			'data411',
+			'data412',
+			'data413',
+		],
+		2: [
+			'data421',
+			'data422',
+			'data423',
+		],
+	},
+];
+    for (let elem of data){
+        for (let keys  in elem){
+            for (let subElem of elem[keys])
+            console.log(subElem);
+        }
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

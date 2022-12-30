@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        let affairs = {
+	'2018': {
+		11: {
+			29: ['дело111', 'дело112', 'дело113'],
+			30: ['дело121', 'дело122', 'дело123'],
+		},
+		12: {
+			30: ['дело211', 'дело212', 'дело213'],
+			31: ['дело221', 'дело222', 'дело223'],
+		},
+	},
+	'2019': {
+		12: {
+			29: ['дело311', 'дело312', 'дело313'],
+			30: ['дело321', 'дело322', 'дело323'],
+			31: ['дело331', 'дело332', 'дело333'],
+		}
+	},
+}
+    let year = 2018;
+    let month = 12;
+    let day = 30;
+    console.log(affairs[year][month][day]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        let str = 'abcde';
+        console.log(str.indexOf('c')); //4
+        console.log(str.indexOf('a')); //5
+        if(str.indexOf('a') == 0){
+            console.log('yes');
+        }   else {
+            console.log('no');
+        } //6
+        let strfor7 = 'abcdea';
+        if(strfor7.lastIndexOf('a') == (strfor7.length - 1)){
+            console.log('yes');
+        }   else {
+            console.log('no');
+        }//7
+        if(str.indexOf('http://') == 0){
+            console.log('yes');
+        }   else {
+            console.log('no');
+        }//8
+        let strfor9 = 'asdasd.html';
+        if(strfor9.lastIndexOf('.html') == (strfor9.length - 5)){
+            console.log('yes');
+        }   else {
+            console.log('no');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

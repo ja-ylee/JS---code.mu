@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        let str = prompt('Введите текст', 'text_text_text');
+        let words = str.split('_');
+        for (let i = 0; i < words.length; i++){
+            words[i] = words[i].slice(0,1).toUpperCase() + words[i].slice(1);
+        }
+        let result = words.join('_');
+        alert(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
