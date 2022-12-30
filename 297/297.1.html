@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block:not(.active) {
+            display: none;
+        }
+        #block {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <button>click me</button>
+        <div id="block">
+            text
+        </div>
+    </div>
+    <script>
+        "use strict";
+        let parent = document.querySelector('#parent');
+        let button = document.querySelector('button');
+        let block  = document.querySelector('#block');
+        button.addEventListener('click', function(event) {
+            if (block.classList.contains('active')) {
+                block.classList.remove('active');
+            }   else {
+                block.classList.add('active');
+            }
+            event.stopImmediatePropagation();
+        });
+    </script>
+</body>
+</html>

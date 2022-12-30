@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a"> <p> - a</p> <br>
+    <input type="text" id="b"> <p> - b</p> <br>
+    <input type="text" id="c"> <p> - c</p> <br>
+    <p id="res"></p>
+    <button>кнопка</button>
+    <script>
+        "use strict";
+        let a = document.querySelector('#a');
+        let b = document.querySelector('#b');
+        let c = document.querySelector('#c');
+        let p = document.querySelector('#res');
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            let D = 0;
+            let x1 = 0;
+            let x2 = 0;
+            D = (Number(b.value) ** 2) - (4 * Number(a.value) * Number(c.value));
+            if (D < 0) {
+                alert('корней нет');
+            }   else if (D === 0) {
+                x1 = (-Number(b.value) + Math.sqrt(D))/(2 * Number(a.value));
+                alert('x = ' + x1)
+            }   else {
+                x1 = (-(Number(b.value)) + Math.sqrt(D))/(2 * Number(a.value));
+                x2 = (-(Number(b.value)) - Math.sqrt(D))/(2 * Number(a.value));
+                alert('x1 = ' + x1 + ', x2 = ' + x2);
+            }
+        });
+    </script>
+</body>
+</html>

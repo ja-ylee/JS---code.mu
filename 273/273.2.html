@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <p></p>
+    <button>click</button>
+    <script>
+        "use strict";
+        let inputs = document.querySelectorAll('input');
+        let button = document.querySelector('button');
+        let sum = document.querySelector('p');
+        button.addEventListener('click',function() {
+            let localSum = 0;
+            for (let input of inputs) {
+                localSum += Number(input.value);
+            }
+            sum.textContent = localSum;
+        });
+    </script>
+</body>
+</html>

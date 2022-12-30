@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button id="b1">заблокировать</button>
+    <button id="b2">разблокировать</button>
+    <script>
+        "use strict";
+        let btn1 = document.querySelector('#b1');
+        let btn2 = document.querySelector('#b2');
+        let inp = document.querySelector('input');
+        btn1.addEventListener('click',function func() {
+            inp.disabled = true;
+        });
+        btn2.addEventListener('click',function func() {
+            inp.disabled = false;
+        });
+    </script>
+</body>
+</html>

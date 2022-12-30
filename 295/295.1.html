@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #red {
+            height: 750px;
+            width: 750px;
+            background-color: red;
+        }
+        #black {
+            height: 500px;
+            width: 500px;
+            background-color: black;
+        }
+        #white {
+            height: 250px;
+            width: 250px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="red">
+        <div id="black">
+            <div id="white"></div>
+        </div>
+    </div>
+    <script>
+        "use strict";
+        let elem1 = document.querySelector('#red');
+        let elem2 = document.querySelector('#black');
+        let elem3 = document.querySelector('#white');
+        elem1.addEventListener('click', function() {
+            console.log('красный');
+        });
+        elem2.addEventListener('click', function() {
+            console.log('черный');
+        });
+        elem3.addEventListener('click', function() {
+            console.log('белый');
+        });
+    </script>
+</body>
+</html>

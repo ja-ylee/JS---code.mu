@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+    <button>кнопка</button>
+    <script>
+        "use strict";
+        let select = document.querySelector('select');
+        let button = document.querySelector('button');
+        button.addEventListener('click', function func() {
+            let option = select[3];
+            option.selected = true;
+        });
+    </script>
+</body>
+</html>

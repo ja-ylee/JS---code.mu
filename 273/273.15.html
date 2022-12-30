@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="31.12.2016">
+    <script>
+        'use strict';
+        let inp = document.querySelector('input');
+        let arr = ['вс','пн','вт','ср','чт','пт','сб'];
+        let year = inp.value.slice(6);
+        let month = inp.value.slice(3,5);
+        let day = inp.value.slice(0,2);
+        inp.addEventListener('blur',function() {
+            let date = new Date(year,month,day);
+            alert(arr[date.getDay()]); 
+        })
+        
+    </script>
+</body>
+</html>

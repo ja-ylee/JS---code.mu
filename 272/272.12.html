@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input>
+    <input>
+    <input>
+
+    <button id="btn">click</button>
+    <script>
+        "use strict";
+        let inputs = document.querySelectorAll('input')
+        let button = document.querySelector('#btn')
+
+        let texts = [
+            'text1',
+            'text2',
+            'text3',
+        ];
+
+        button.addEventListener('click',function() {
+            for (let input of inputs) {
+                for (let text of texts) {
+                    if (input.value === text) {
+                        input.classList.toggle('right')
+                    } else {
+                        input.classList.toggle('wrong')
+                    }
+                }
+                console.log(input.className);
+            }
+        });
+    </script>
+</body>
+</html>

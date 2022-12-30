@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select>
+        <option value="1">ура</option>
+        <option value="2" selected>ура</option>
+        <option value="3">ура</option>
+    </select>
+    <script>
+        "use strict";
+        let select = document.querySelector('select');
+        for (let option of select) {
+            if (option.selected) {
+                option.text += '!';
+            }   else {
+                option.text += '?';
+            }
+        }
+    </script>
+</body>
+</html>

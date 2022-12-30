@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="">первая</a>
+    <a href="https://www.youtube.com/">вторая</a>
+    <a href="http://www.youtube.com/">третья</a>
+    <script>
+        "use strict";
+        let allA = document.querySelectorAll('a');
+        for (let a of allA) {
+            if (a.href.slice(0,7) == 'http://') {
+                a.textContent += ' ' +'&rarr;';
+            }
+        }
+    </script>
+</body>
+</html>

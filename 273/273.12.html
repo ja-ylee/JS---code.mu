@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.youtube.com/" id="a1">ссылка</a>
+    <a href="https://code.mu/ru/javascript/book/prime/dom/basis/practicum/" id="a2">ссылка</a>
+    <a href="https://code.mu/ru/javascript/book/prime/#r=/ru/javascript/book/prime/dom/basis/text-fields/" id="a3">ссылка</a>
+    <script>
+        "use strict";
+        let a1 = document.querySelector('#a1');
+        let a2 = document.querySelector('#a2');
+        let a3 = document.querySelector('#a3');
+        a1.textContent += ' (' + a1.href + ')';
+        a2.textContent += ' (' + a2.href + ')';
+        a3.textContent += ' (' + a3.href + ')';
+    </script>
+</body>
+</html>

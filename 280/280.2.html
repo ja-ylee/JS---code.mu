@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <p></p>
+    <script>
+        "use strict";
+        let i = document.querySelector('input');
+        let p = document.querySelector('p');
+        i.addEventListener('input', function func() {
+            let leng = i.value.length;
+            if (leng <= 5) {
+                p.innerHTML = 'осталость ' + (5 - leng) + ' символов'; 
+            }   else if (leng > 5) {
+                p.innerHTML = 'введено на ' + Math.abs(5-leng) + ' больше';
+            }
+        });
+    </script>
+</body>
+</html>

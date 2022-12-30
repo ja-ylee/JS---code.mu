@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input>
+    <input>
+    <input>
+
+    <button type="submit">click</button>
+    <script>
+        "use strict";
+        let button = document.querySelector('button');
+        let elems  = document.querySelectorAll('input');
+        let sum = 0;
+        button.addEventListener('click', function() {
+            for (let elem of elems) {
+            sum += Number(elem.value);
+        }
+            console.log(sum);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        "use strict";
+        let input = document.querySelector('input');
+        
+        input.addEventListener('keypress', function(event) {
+            console.log(event.key + ' - ' + event.code);
+            //292.2 понажимал
+            //292.3 Enter
+            //292.4 никакого, т.к. при нажатии этой клавиши ввода не происходит
+        });
+    </script>
+</body>
+</html>
