@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent"></div>
+    <script>
+        "use strict";
+        let div = document.querySelector('#parent');
+
+        function createTable(rows, cols, parent) {
+            let table = document.createElement('table');
+            
+            // тут создадим таблицу с rows рядами и cols колонками
+            for (let i = 1; i <= rows; i++) {
+                let tr = document.createElement('tr');
+                for (let j = 1; j <= cols; j++) {
+                    let td = document.createElement('td');
+                    td.textContent = 'text';
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            
+            parent.appendChild(table);
+        }
+
+        createTable(2,1,div);
+    </script>
+</body>
+</html>

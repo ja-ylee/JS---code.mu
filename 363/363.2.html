@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        ;(function() {
+            function allKeys(obj) {
+                if (!isObject(obj)) return [];
+                var keys = [];
+                for (var key in obj) keys.push(key);
+                if (hasEnumBug) collectNonEnumProps(obj, keys);
+                return keys;
+            }
+
+            function keys(obj) {
+                if (!isObject(obj)) return [];
+                if (nativeKeys) return nativeKeys(obj);
+                var keys = [];
+                for (var key in obj) if (has(obj, key)) keys.push(key);
+                if (hasEnumBug) collectNonEnumProps(obj, keys);
+                return keys;
+            }
+
+            function values(obj) {
+                var _keys = keys(obj);
+                var length = _keys.length;
+                var values = Array(length);
+                for (var i = 0; i < length; i++) {
+                    values[i] = obj[_keys[i]];
+                }
+                return values;
+            }
+
+            function pairs(obj) {
+                var _keys = keys(obj);
+                var length = _keys.length;
+                var pairs = Array(length);
+                for (var i = 0; i < length; i++) {
+                    pairs[i] = [_keys[i], obj[_keys[i]]];
+                }
+                return pairs;
+            }
+
+            function invert(obj) {
+                var result = {};
+                var _keys = keys(obj);
+                for (var i = 0, length = _keys.length; i < length; i++) {
+                    result[obj[_keys[i]]] = _keys[i];
+                }
+                return result;
+            }
+
+            window.module = {allKeys, keys, values, pairs, invert};
+        })();
+    </script>
+</body>
+</html>

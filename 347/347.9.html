@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl" style="border: 1px solid black;"></table>
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="age" placeholder="age">
+    <input type="text" id="salary" placeholder="salary">
+    <button>Добавить</button>
+    <script>
+        "use strict";
+        let employees = [
+            {name: 'employee1', age: 30, salary: 400},
+            {name: 'employee2', age: 31, salary: 500},
+            {name: 'employee3', age: 32, salary: 600},
+        ];
+        let table = document.querySelector('#tbl');
+
+        for (let emp of employees) {
+            let tr = document.createElement('tr');
+
+            let td1 = document.createElement('td');
+            td1.textContent = emp.name;
+            tr.appendChild(td1);
+
+            let td2 = document.createElement('td');
+            td2.textContent = emp.age;
+            tr.appendChild(td2);
+
+            let td3 = document.createElement('td');
+            td3.textContent = emp.salary;
+            tr.appendChild(td3);
+
+            table.appendChild(tr);
+        }
+
+        let tds = document.querySelectorAll('#tbl td');
+
+        //создание инпута для редактирования содержимого ячейки
+        for (let td of tds) {
+            td.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = td.textContent;
+                td.textContent = '';
+                td.appendChild(input);
+                input.addEventListener('blur', function () {
+                    td.textContent = input.value;
+                    td.addEventListener('click', func);
+                });
+                td.removeEventListener('click', func); 
+            });
+        }
+
+        let trs = document.querySelectorAll('#tbl tr');
+
+        //добавление ссылки на удаление ряда
+        for(let tr of trs) {
+            let td = document.createElement('td');
+            let remove = document.createElement('a');
+            remove.href = '';
+            remove.textContent = 'удалить';
+            remove.addEventListener('click', function(event) {
+                 event.preventDefault();
+                 tr.remove();
+             });
+            td = remove;
+            tr.appendChild(td);
+        }
+
+        let name = document.querySelector('#name');
+        let age = document.querySelector('#age');
+        let salary = document.querySelector('#salary');
+        let button = document.querySelector('button');
+        button.addEventListener('click', function() {
+            let tr = document.createElement('tr');
+
+            let td1 = document.createElement('td');
+            td1.textContent = name.value;
+            tr.appendChild(td1);
+            td1.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = td.textContent;
+                td1.textContent = '';
+                td1.appendChild(input);
+                input.addEventListener('blur', function () {
+                    td1.textContent = input.value;
+                    td1.addEventListener('click', func);
+                });
+                td1.removeEventListener('click', func); 
+            });
+
+            let td2 = document.createElement('td');
+            td2.textContent = age.value;
+            tr.appendChild(td2);
+            td2.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = td2.textContent;
+                td2.textContent = '';
+                td2.appendChild(input);
+                input.addEventListener('blur', function () {
+                    td2.textContent = input.value;
+                    td2.addEventListener('click', func);
+                });
+                td2.removeEventListener('click', func); 
+            });
+
+            let td3 = document.createElement('td');
+            td3.textContent = salary.value;
+            tr.appendChild(td3);
+            td3.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = td3.textContent;
+                td3.textContent = '';
+                td3.appendChild(input);
+                input.addEventListener('blur', function () {
+                    td3.textContent = input.value;
+                    td3.addEventListener('click', func);
+                });
+                td3.removeEventListener('click', func); 
+            });
+
+            table.appendChild(tr);  
+        });
+
+    </script>
+</body>
+</html>

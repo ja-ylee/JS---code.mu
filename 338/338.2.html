@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>текст</p>
+    </div>
+    <script>
+        "use strict";
+        let div = document.querySelector('div');
+        let p = document.querySelector('p');
+        p.addEventListener('click', function() {
+            let inp = document.createElement('input');
+            inp.value = p.textContent;
+            inp.addEventListener('blur', function() {
+                p.textContent = this.value;
+                this.remove();
+            });
+            p.parentElement.appendChild(inp);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="age" placeholder="age">
+    <input type="text" id="salary" placeholder="salary">
+    <button>Добавить</button>
+    <script>
+        "use strict";
+        let list = document.querySelector('#list');
+        let employees = [
+            {name: 'employee1', age: 30, salary: 400},
+            {name: 'employee2', age: 31, salary: 500},
+            {name: 'employee3', age: 32, salary: 600},
+        ];
+
+        //добавление элементов массива в список
+        for (let emp of employees) {
+            let li = document.createElement('li');
+            let span = document.createElement('span');
+            span.textContent = emp.name + ' - ' + emp.age + ' - ' + emp.salary;
+            li.appendChild(span);
+            list.appendChild(li);
+        }
+
+        let spans = document.querySelectorAll('#list span');
+        
+        //добавление редактирования
+        for (let span of spans) {
+            span.addEventListener('click', function func() {
+                let inp = document.createElement('input');
+                inp.value = span.textContent;
+                span.textContent = '';
+                span.appendChild(inp);
+                inp.addEventListener('blur', function() {
+                    span.textContent = inp.value;
+                    span.addEventListener('click', func);
+                });
+                span.removeEventListener('click', func);
+            });
+        }
+
+        let lies = document.querySelectorAll('#list li');
+
+        //добавление удаления
+        for (let li of lies) {
+            let remove = document.createElement('a');
+            remove.href = '';
+            remove.textContent = '(удалить)';
+            li.appendChild(remove);
+            remove.addEventListener('click', function(event) {
+                event.preventDefault();
+                li.remove();
+            });
+        }
+        
+        let name = document.querySelector('#name');
+        let age = document.querySelector('#age');
+        let salary = document.querySelector('#salary');
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function() { 
+            let li = document.createElement('li');
+            let span = document.createElement('span');
+            span.textContent = name.value + ' - ' + age.value + ' - ' + salary.value;
+            li.appendChild(span);
+            list.appendChild(li);
+
+            span.addEventListener('click', function func() {
+                let inp = document.createElement('input');
+                inp.value = span.textContent;
+                span.textContent = '';
+                span.appendChild(inp);
+                inp.addEventListener('blur', function() {
+                    span.textContent = inp.value;
+                    span.addEventListener('click', func);
+                });
+                span.removeEventListener('click', func);
+            });
+
+            let remove = document.createElement('a');
+            remove.href = '';
+            remove.textContent = '(удалить)';
+            li.appendChild(remove);
+            remove.addEventListener('click', function(event) {
+                event.preventDefault();
+                li.remove();
+            });
+        });
+    </script>
+</body>
+</html>

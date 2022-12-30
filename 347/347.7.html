@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl" style="border: 1px solid black;"></table>
+    <script>
+        "use strict";
+        let employees = [
+            {name: 'employee1', age: 30, salary: 400},
+            {name: 'employee2', age: 31, salary: 500},
+            {name: 'employee3', age: 32, salary: 600},
+        ];
+        let table = document.querySelector('#tbl');
+
+        for (let emp of employees) {
+            let tr = document.createElement('tr');
+
+            let td1 = document.createElement('td');
+            td1.textContent = emp.name;
+            tr.appendChild(td1);
+
+            let td2 = document.createElement('td');
+            td2.textContent = emp.age;
+            tr.appendChild(td2);
+
+            let td3 = document.createElement('td');
+            td3.textContent = emp.salary;
+            tr.appendChild(td3);
+
+            table.appendChild(tr);
+        }
+
+        let tds = document.querySelectorAll('#tbl td');
+
+        //создание инпута для редактирования содержимого ячейки
+        for (let td of tds) {
+            td.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = td.textContent;
+                td.textContent = '';
+                td.appendChild(input);
+                input.addEventListener('blur', function () {
+                    td.textContent = input.value;
+                    td.addEventListener('click', func);
+                });
+                td.removeEventListener('click', func); 
+            });
+        }
+    </script>
+</body>
+</html>

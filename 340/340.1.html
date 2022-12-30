@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        'use strict';
+        let ul = document.querySelectorAll('ul li');
+        for (let li of ul) {
+            li.addEventListener('click', function func() {
+            let inp = document.createElement('input');
+            inp.value = li.textContent;
+            li.textContent = '';
+            li.appendChild(inp);
+            inp.addEventListener('blur', function() {
+                li.textContent = inp.value;
+                li.addEventListener('click', func);
+            });
+            li.removeEventListener('click', func);
+        });
+        }
+    </script>
+</body>
+</html>

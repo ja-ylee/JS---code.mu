@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td {
+            border: 2px solid black;
+            border-collapse: collapse;         
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>text</td>
+            <td>text</td>
+            <td>text</td>
+        </tr>
+        <tr>
+            <td>text</td>
+            <td>text</td>
+            <td>text</td>
+        </tr>   
+    </table>
+    <script>
+        "use strict";
+        let table = document.querySelector('table');
+        let trs = document.querySelectorAll('table tr');
+        for (let tr of trs) {
+            let td = document.createElement('td');
+            let a = document.createElement('a');
+            a.href = '';
+            a.textContent = 'удалить';
+            td.appendChild(a);
+            a.addEventListener('click', function(event) {
+                td.remove();
+                event.preventDefault();
+            });
+            tr.appendChild(td);
+        }
+    </script>
+</body>
+</html>

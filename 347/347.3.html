@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <input type="text" id="input">
+    <script>
+        "use strict";
+        let arr = ['1 пункт', '2 пункт', '3 пункт', '4 пункт', '5 пункт']; //заданный массив
+        let list = document.querySelector('#list'); //список
+
+        //добавление элементов массива в список list
+        for (let elem of arr) {
+            let span = document.createElement('span');
+            let li = document.createElement('li');
+            span.textContent = elem;
+            li.appendChild(span);
+            list.appendChild(li);
+        }
+
+        //редактирование элементов из массива list
+        let spans = document.querySelectorAll('#list span');
+        for (let span of spans) {
+            span.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = span.textContent;
+                span.textContent = '';
+                span.appendChild(input);
+                input.addEventListener('blur', function() {
+                    span.textContent = input.value;
+                    span.addEventListener('click', func);
+
+                });
+                this.removeEventListener('click', func);
+            });
+        }
+
+        let input = document.querySelector('#input');//поле для добавления пунктов в список list
+
+        //добавление значений инпут в список list
+        input.addEventListener('blur', function func() {
+            let span = document.createElement('span');
+            let li = document.createElement('li'); 
+            span.textContent = input.value;
+            li.appendChild(span);
+            list.appendChild(li);
+            input.value = '';
+            //добавление редактирования пунктов li
+            span.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = span.textContent;
+                span.textContent = '';
+                span.appendChild(input);
+                input.addEventListener('blur', function() {
+                    span.textContent = input.value;
+                    span.addEventListener('click', func);
+
+                });
+                this.removeEventListener('click', func);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        "use strict";
+        let list = document.querySelector('#list');
+        let employees = [
+            {name: 'employee1', age: 30, salary: 400},
+            {name: 'employee2', age: 31, salary: 500},
+            {name: 'employee3', age: 32, salary: 600},
+        ];
+
+        //добавление элементов массива в список
+        for (let emp of employees) {
+            let li = document.createElement('li');
+            li.textContent = emp.name + ' - ' + emp.age + ' - ' + emp.salary;
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>

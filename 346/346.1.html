@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color1 {
+            background: red;
+        }
+        .color2 {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>text</td>
+            <td>text</td>
+            <td>text</td>
+        </tr>
+    </table>
+    <script>
+        "use strict";
+        let tds = document.querySelectorAll('table td');
+        let color = 'color1';
+        for (let td of tds) {
+            td.addEventListener('click', function() {
+                if (color == 'color1') {
+                    color = 'color2';
+                }   else {
+                    color = 'color1';
+                }
+                td.classList.add(color);
+            });
+        }
+    </script>
+</body>
+</html>
