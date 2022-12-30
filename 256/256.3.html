@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="t"><input type="text" class="t"><input type="text" class="t">
+    <p id="p">сумма</p>
+    <input type="submit" id="b">
+    <script>
+        "use strict";
+        let button = document.querySelector('#b');
+        let sum = document.querySelector('#p');
+        let numbers = document.querySelectorAll('.t');
+        button.addEventListener('click',function() {
+            let sumofnums= 0;
+            for (let num of numbers) {
+                sumofnums += Number(num.value);
+            }
+            sum.textContent = sumofnums;
+        });
+    </script>
+</body>
+</html>

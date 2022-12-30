@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>text1</li>
+        <li>text2</li>
+        <li id="elem">text3</li>
+        <li>text4</li>
+        <li>text5</li>
+    </ul>
+    <script>
+        "use strict";
+        let previous = document.querySelector('#elem').previousElementSibling;
+        let next = document.querySelector('#elem').nextElementSibling;
+        let previousText = previous.innerHTML;
+        let nextText = next.innerHTML;
+        previous.innerHTML = nextText;
+        next.innerHTML = previousText;
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* знаю что так делать плохо (как и писать js код в html доке, но сделал для
+        удобства в данном случае)*/
+        .liner {
+            text-decoration: line-through;
+        }
+        .colored {
+            color: red;
+        }
+        .bolder {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="elem">Hello, world!</p>
+    <input type="submit" value="перечеркнуть" id="button1">
+    <input type="submit" value="сделать жирным" id="button2">
+    <input type="submit" value="сделать красным" id="button3">
+    <script>
+        "use strict";
+        let elem = document.querySelector('#elem');
+        let red = document.querySelector('#button3');
+        let bold = document.querySelector('#button2');
+        let line = document.querySelector('#button1');
+        red.addEventListener('click',function func() {
+            elem.classList.add('colored');
+            this.removeEventListener('click',func);
+        });
+        bold.addEventListener('click',function func() {
+            elem.classList.add('bolder');
+            this.removeEventListener('click',func);
+        });
+        line.addEventListener('click',function func() {
+            elem.classList.add('liner');
+            this.removeEventListener('click',func);
+        });
+
+    </script>
+</body>
+</html>

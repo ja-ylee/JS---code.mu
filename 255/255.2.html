@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="t1">
+    <input type="text" id="t2">
+    <input type="text" id="t3">
+
+    <script>
+        "use strict";
+        let t1 = document.querySelector('#t1');
+        let t2 = document.querySelector('#t2');
+        let t3 = document.querySelector('#t3');
+        
+        function func() {
+            this.value = Number(this.value) ** 2;
+        }
+
+        t1.addEventListener('blur',func);
+        t2.addEventListener('blur',func);
+        t3.addEventListener('blur',func);
+    </script>
+</body>
+</html>
